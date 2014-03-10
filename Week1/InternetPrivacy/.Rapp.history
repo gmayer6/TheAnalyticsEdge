@@ -1,0 +1,231 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+A = read.csv(file="CPSData.csv"
+)
+ls()
+structure(A)
+str(A)
+A = read.csv(file="CPSData.csv"
+Demograpgics
+Demographics
+ls()
+pwd
+pwd()
+getwd()
+source("/Users/gmayer/Dropbox/Work/5.Edx/Analytics/Week1/Demographics.R")
+ls()
+str(CPS)
+str(CPS)#
+summary(CPS)
+table(CPS$Industry)
+sort(table(CPS$Industry))
+sort(table(CPS$State))
+sort(table(CPS$Citizenship))
+(116639+7073)/131302
+sort(table(CPS$Race))
+sort(table(CPS$Hispanic))
+sort(table(CPS$Hispanic, CPS$Race))
+sort(table(CPS$Hispanic, CPS$Race))
+table(CPS$Hispanic, CPS$Race)
+summary(CPS)
+is.na(CPS$Married)
+table(CPS$Region, is.na(CPS$Married))
+table(CPS$Region, is.na(CPS$Sex))
+table(CPS$Region, is.na(CPS$Age))
+table(CPS$Region, is.na(CPS$Citezenship))
+table(CPS$Region, is.na(CPS$Citizenship))
+table(CPS$Region, is.na(CPS$Married))
+table(CPS$Age, is.na(CPS$Married))
+table(CPS$Sex, is.na(CPS$Married))
+ls()
+rm(A)
+str(Metro)
+summary(Metro)
+table(Metro$MetroArea, is.na(Metro$MetroArea))
+table(is.na(Metro$MetroArea)
+)
+summary(CPS)
+table(CPS$State.CPS$MetroAreaCode)
+table(CPS$State,CPS$MetroAreaCode)
+table(CPS$State.is.na(CPS$MetroAreaCode))
+table(CPS$State,is.na(CPS$MetroAreaCode))
+table(CPS$Region,is.na(CPS$MetroAreaCode))
+table(CPS$Region,mean(is.na(CPS$MetroAreaCode)))
+IBM = read.csv("IBMStock.csv")#
+GE = read.csv("GEStock.csv")#
+ProcterGamble = read.csv("ProcterGamble.csv")
+IBM = read.csv("IBMStock.csv")#
+GE = read.csv("GEStock.csv")#
+ProcterGamble = read.csv("ProcterGamble.csv")
+# Load data from csv files#
+IBM = read.csv("IBMStock.csv")#
+GE = read.csv("GEStock.csv")#
+ProcterGamble = read.csv("ProcterGambleStock.csv")
+summary(IBM)
+str(IBM)
+# Load data from csv files#
+IBM = read.csv("IBMStock.csv")#
+GE = read.csv("GEStock.csv")#
+ProcterGamble = read.csv("ProcterGambleStock.csv")#
+CocaCola = read.csv("CocaColaStock.csv")#
+Boeing = read.csv("BoeingStock.csv")#
+#
+# Convert dates#
+IBM$Date = as.Date(IBM$Date, "%m/%d/%y")#
+GE$Date = as.Date(GE$Date, "%m/%d/%y")#
+CocaCola$Date = as.Date(CocaCola$Date, "%m/%d/%y")#
+ProcterGamble$Date = as.Date(ProcterGamble$Date, "%m/%d/%y")#
+Boeing$Date = as.Date(Boeing$Date, "%m/%d/%y")
+summary(IBM)#
+summary(GE)#
+summary(ProcterGamble)#
+summary(CocaCola)#
+summary(Boeing)
+sd(ProcterGamble$StockPrice)
+plot(CocaCola)
+plot(CocaCola,'l')
+plot(CocaCola,l)
+plot(CocaCola,"l")
+plot(CocaCola$Date, CocaCola$StockPrice, type="l")
+lines(ProcterGamble$Date, ProcterGamble$StockPrice)
+lines(ProcterGamble$Date, ProcterGamble$StockPrice,col="red")
+plot(ProcterGamble$Date, ProcterGamble$StockPrice)
+plot(ProcterGamble$Date, ProcterGamble$StockPrice,type="l")
+plot(CocaCola$Date, CocaCola$StockPrice, type="l")
+plot(CocaCola$Date, CocaCola$StockPrice, type="l")
+lines(ProcterGamble$Date, ProcterGamble$StockPrice,col="red")
+abline(v=as.Date(c("2000-03-01")), lwd=2)
+DateConvert = as.Date(strptime(mvt$Date, "%m/%d/%y %H:%M"))#
+mvt$Month = months(DateConvert)#
+mvt$Weekday = weekdays(DateConvert)#
+mvt$Date = DateConvert
+mvt = read.csv("mvtWeek1.csv")#
+#
+# Convert dates#
+DateConvert = as.Date(strptime(mvt$Date, "%m/%d/%y %H:%M"))#
+mvt$Month = months(DateConvert)#
+mvt$Weekday = weekdays(DateConvert)#
+mvt$Date = DateConvert
+mvt = read.csv("mvtWeek1.csv")
+DateConvert = as.Date(strptime(mvt$Date, "%m/%d/%y %H:%M"))
+mvt$Month = months(DateConvert)
+mvt$Weekday = weekdays(DateConvert)
+mvt$Date = DateConvert
+sort(table(mvt$LocationDescription))
+Top5 = subset(mvt, LocationDescription == “STREET”)
+Top5 = subset(mvt, LocationDescription == “STREET”)
+summary(Top5)
+summary(mvt)
+Top5 = subset(mvt, LocationDescription == STREET)
+Top5 = subset(mvt, LocationDescription == 'STREET')
+Top5 = subset(mvt, LocationDescription == 'STREET' | #
+LocationDescription == 'PARKING LOT/GARAGE(NON.RESID.)' | #
+LocationDescription == 'ALLEY' |#
+LocationDescription == 'DRIVEWAY - RESIDENTIAL' |#
+LocationDescription == 'GAS STATION')
+summary(Top5)
+str(Top5)
+Top5$LocationDescription = factor(Top5$LocationDescription)
+str(Top5)
+summary(Top5)
+table(Top5$LocationDescription,Top5$Arrest)
+249/2059
+132/1543
+439/1672
+1603/13249
+11595/144969
+table(Top5$Weekday)
+table(Top5$Weekday,top5$LocationDescription)
+table(Top5$Weekday,Top5$LocationDescription)
+plot(CocaCola$Date[301:432], CocaCola$StockPrice[301:432], type="l", col="red", ylim=c(0,210))
+plot(CocaCola$Date[301:432], CocaCola$StockPrice[301:432], type="l", col="red", ylim=c(0,210))#
+lines(CocaCola$Date[301:432], ProcterGamble$StockPrice[301:432],col="blue")
+plot(CocaCola$Date[301:432], CocaCola$StockPrice[301:432], type="l", col="red", ylim=c(0,210))#
+lines(CocaCola$Date[301:432], ProcterGamble$StockPrice[301:432],col="blue")#
+lines(CocaCola$Date[301:432], IBM$StockPrice[301:432],col="black")#
+lines(CocaCola$Date[301:432], GE$StockPrice[301:432],col="green")#
+lines(CocaCola$Date[301:432], Boeing$StockPrice[301:432],col="orange")
+abline(v=as.Date(c("2000-03-01")), lwd=2)
+abline(v=as.Date(c("1997-09-01")), lwd=2)#
+abline(v=as.Date(c("1997-11-01")), lwd=2)
+plot(CocaCola$Date[301:432], CocaCola$StockPrice[301:432], type="l", col="red", ylim=c(0,210))#
+lines(CocaCola$Date[301:432], ProcterGamble$StockPrice[301:432],col="blue")#
+lines(CocaCola$Date[301:432], IBM$StockPrice[301:432],col="black")#
+lines(CocaCola$Date[301:432], GE$StockPrice[301:432],col="green")#
+lines(CocaCola$Date[301:432], Boeing$StockPrice[301:432],col="orange")#
+abline(v=as.Date(c("2000-03-01")), lwd=2)#
+abline(v=as.Date(c("1997-09-01")), lwd=2)#
+abline(v=as.Date(c("1997-11-01")), lwd=2)#
+abline(v=as.Date(c("2004-01-01")), lwd=2)#
+abline(v=as.Date(c("2005-01-01")), lwd=2)
+IBM$Date
+months(IBM$Date)
+summary(IBM)
+tapply(IBM$StockPrice,months(IBM$Date))
+tapply(IBM$StockPrice,months(IBM$Date),mean)
+tapply(GE$StockPrice,months(IBM$Date),mean)#
+tapply(CocaCola$StockPrice,months(IBM$Date),mean)
+ls()
+str(CPS)
+summary(CPS)
+tapply(CPS$State,is.na(CPS$MetroAreaCode),mean)
+CPS = read.csv("AnonymityPoll.csv")
+CPS = read.csv("AnonymityPoll.csv")
+AP = read.csv("AnonymityPoll.csv")
+summary(AP)
+str(AP)
+0.5078*(1002 - 43)
+0.5078*(1002)
+mean(AP$Smartphone)
+sum(AP$Smartphone)
+sum(AP$Smartphone, na.rm = false)
+sum(AP$Smartphone, na.rm = FLASE)
+sum(AP$Smartphone, na.rm = FALSE)
+mean(AP$Smartphone, na.rm = FALSE)
+AP$Smartphone
+mean(AP$Smartphone, na.rm = TRUE)
+SUM(AP$Smartphone, na.rm = TRUE)
+sum(AP$Smartphone, na.rm = TRUE)
+1002 - 487 - 43
+table(poll$Smartphone)
+poll = A
+poll = AP
+table(poll$Smartphone)
+table(poll$Region)
+table(poll$Region,poll$States)
+table(poll$Region,poll$State)
+table(poll$Internet.Use,poll$Smartphone)

@@ -1,0 +1,126 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+pwd
+ls
+ls()
+pwd()
+ls()
+a=1
+summary
+summary(a)
+a=(1,2,4,6)
+S = seq(1,100,2)
+summary(S)
+str(S)
+S
+getwd
+getwd()
+D = read.csv("mvtWeek1.csv")
+str(D)
+summary(D)
+str(D)
+summary(D)
+NewThing =subset(D,Domestic == "TRUE")
+summary(NewThing)
+ls()
+rm NewThing
+rm(NewThing)
+ls()
+str(D)
+summary(D)
+D.Date
+D
+W=csv.read("WHO.csv")
+W=read.csv("WHO.csv")
+summary(W)
+W$Over60
+summary(S)
+ls()
+summary(D)
+rm(S)
+rm(a)
+D
+summary(D)
+mean(W)
+summary(W)
+mean(W$Over60)
+which.min(W$Over60)
+W$Country[183]
+which.max(W$LiteracyRate)
+W$Country[44]
+ls()
+rm(W)
+summary(D)
+DateConvert = as.Date(strptime(mvt$Date, "%m/%d/%y %H:%M"))
+DateConvert = as.Date(strptime(D$Date, "%m/%d/%y %H:%M"))
+summary(DateConvert)
+mvt$Month = months(DateConvert)
+mvt = D
+mvt$Month = months(DateConvert)
+mvt$Weekday = weekdays(DateConvert)
+mvt$Date = DateConvert
+table(mvt$)
+table(mvt)
+table(mvt$ID)
+summary(mvt)
+table(mvt$month)
+table(mvt$Month)
+table(mvt$Weekday)
+A = subset(mvt,Arrest == "TRUE")
+structure(A)
+summary(A)
+str(A)
+table(A.Months)
+table(A$Month)
+hist(mvt@Date, breaks = 100)
+hist(mvt$Date, breaks = 100)
+boxplot(mvt$Date)
+ls()
+boxplot(mvt@Date)
+boxplot(mvt$Date)
+summary(mvt)
+y2001 = subset(mvt, Year == 2001)
+summary(y2001)
+2152/(2152+18517)
+y2007 = subset(mvt, Year == 2007)
+summary(y2007)
+13068/(13068+1212)
+1212/(13068+1212)
+table(mvt$Arrest, mvt$Year)
+550/(550+13542)
+sort(table(mvt$LocationDescription))
+(table(mvt$LocationDescription))
