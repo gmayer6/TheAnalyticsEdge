@@ -1,0 +1,104 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+stevens = read.csv("stevens.csv")#
+str(stevens)
+stevens = read.csv("stevens.csv")#
+str(stevens)
+library(caTools)#
+set.seed(3000)#
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)
+str(split)
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+install.packages("rpart")#
+library(rpart)#
+install.packages("rpart.plot")#
+library(rpart.plot)
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=25))#
+prp(StevensTree)
+prp(StevensTree)
+PredictCART = predict(StevensTree, newdata = Test, type = "class")#
+table(Test$Reverse, PredictCART)#
+(41+71)/(41+36+22+71)
+41+36+22+71
+170/566
+library(ROCR)
+install.packages("ROCR")
+library(ROCR)
+PredictROC = predict(StevensTree, newdata = Test)#
+PredictROC
+pred = prediction(PredictROC[,2], Test$Reverse)#
+perf = performance(pred, "tpr", "fpr")#
+plot(perf)
+as.numeric(performance(pred, "auc")@y.values)
+prp(StevensTree)
+# CART model#
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=5))#
+prp(StevensTree)
+# CART model#
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=100))#
+prp(StevensTree)
+install.packages("randomForest")#
+library(randomForest)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)#
+(40+74)/(40+37+19+74)
+set.seed(100)
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)#
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)
+(44+76)/(44+33+17+76)
+set.seed(200)#
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)#
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)
+(39+73)/(39+38+20+73)

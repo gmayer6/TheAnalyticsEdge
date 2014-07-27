@@ -1,0 +1,74 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+stevens = read.csv("stevens.csv")
+summary(stevens)
+str(stevens)
+library(caTools)
+install.packages("caTools")
+install.packages("caTools")
+chooseCRANmirror()
+install.packages("caTools")
+library(caTools)
+set.seed(3000)#
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+install.packages("rpart")
+install.packages("rpart.plot")
+library(rpart)
+library(rpart.plot)
+as.numeric(performance(pred, "auc")@y.values)
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=25))#
+prp(StevensTree)
+PredictCART = predict(StevensTree, newdata = Test, type = "class")#
+table(Test$Reverse, PredictCART)#
+(41+71)/(41+36+22+71)
+library(ROCR)
+as.numeric(performance(pred, "auc")@y.values)
+PredictROC = predict(StevensTree, newdata = Test)#
+PredictROC
+pred = prediction(PredictROC[,2], Test$Reverse)
+library(ROCR)
+exp(11)
+1/(1+exp(11))
+log(11)
+-1.5 + 3*5 -0.5*5
+log(11)
+1/(1+exp(-11))
+1.5-2.5
+exp(-1.5)
+1/(1+exp(1.5))

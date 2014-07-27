@@ -1,0 +1,43 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+D = read.csv("gerber.csv")
+str(D)
+summary(D)
+Voted = subset(D,voting == 1)
+summary(Voted)
+50972 - 5268
+26/30

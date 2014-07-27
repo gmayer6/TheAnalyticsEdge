@@ -1,0 +1,164 @@
+sd(c(5,8,12))
+which.min(c(4,1,6))
+2^
+4
+2^
+sqrt(2)
+abs(2)
+?sqrt
+HoursYear <- 365*24
+HoursYear
+A = 2
+A
+Is()
+ls
+ls()
+c(2,3,5,8)
+Country=c("Brazil","China","India","Switzerland","USA")
+Country
+LifeExpentancy=c(74,76,65,83,83,79)
+LifeExpentancy
+c("Brdazi",74,"China",76)
+Country[1]
+Country[6]
+Country[4]
+S = seq(1,100,2)
+S
+plot(S)
+160/5
+Data = data.frame(Country,LifeExpentancy)
+cbind(LifeExpentancy)
+cbind(LifeExpentancy,2)
+cbind(LifeExpentancy,seq(3,8,1))
+cbind(LifeExpentancy,seq(3,8,2))
+cbind(LifeExpentancy,seq(3,9,2))
+16*2*80
+16*2*80/5
+stevens = read.csv("stevens.csv")#
+str(stevens)
+stevens = read.csv("stevens.csv")#
+str(stevens)
+library(caTools)#
+set.seed(3000)#
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)
+str(split)
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+install.packages("rpart")#
+library(rpart)#
+install.packages("rpart.plot")#
+library(rpart.plot)
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=25))#
+prp(StevensTree)
+prp(StevensTree)
+PredictCART = predict(StevensTree, newdata = Test, type = "class")#
+table(Test$Reverse, PredictCART)#
+(41+71)/(41+36+22+71)
+41+36+22+71
+170/566
+library(ROCR)
+install.packages("ROCR")
+library(ROCR)
+PredictROC = predict(StevensTree, newdata = Test)#
+PredictROC
+pred = prediction(PredictROC[,2], Test$Reverse)#
+perf = performance(pred, "tpr", "fpr")#
+plot(perf)
+as.numeric(performance(pred, "auc")@y.values)
+prp(StevensTree)
+# CART model#
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=5))#
+prp(StevensTree)
+# CART model#
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(minbucket=100))#
+prp(StevensTree)
+install.packages("randomForest")#
+library(randomForest)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)#
+(40+74)/(40+37+19+74)
+set.seed(100)
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)#
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)
+(44+76)/(44+33+17+76)
+set.seed(200)#
+split = sample.split(stevens$Reverse, SplitRatio = 0.7)#
+Train = subset(stevens, split==TRUE)#
+Test = subset(stevens, split==FALSE)
+Train$Reverse = as.factor(Train$Reverse)#
+Test$Reverse = as.factor(Test$Reverse)
+StevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )
+PredictForest = predict(StevensForest, newdata = Test)#
+table(Test$Reverse, PredictForest)
+(39+73)/(39+38+20+73)
+gerber = read.csv("gerber.csv")
+prp(CARTmodel)
+CARTmodel = rpart(voting ~ civicduty + hawthorne + self + neighbors, data=gerber)
+prp(CARTmodel)
+CARTmodel2 = rpart(voting ~ civicduty + hawthorne + self + neighbors, data=gerber, cp=0.0)#
+prp(CARTmodel2)
+CARTmodel2 = rpart(voting ~ civicduty + hawthorne + self + neighbors, data=gerber, cp=0.0)#
+prp(CARTmodel2)
+install.packages("caret")#
+library(caret)#
+install.packages("e1071")#
+library(e1071)
+fitControl = trainControl( method = "cv", number = 10 )#
+cartGrid = expand.grid( .cp = (1:50)*0.01)
+train(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, method = "rpart", trControl = fitControl, tuneGrid = cartGrid )
+StevensTreeCV = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method="class", data = Train, control=rpart.control(cp = 0.18))
+PredictCV = predict(StevensTreeCV, newdata = Test, type = "class")#
+table(Test$Reverse, PredictCV)#
+(59+64)/(59+18+29+64)
+prp(StevensTreeCV)
+prp(CARTmodel2)
+boston = read.csv("boston.csv")#
+str(boston)
+library(rpart)#
+library(rpart.plot)
+latlontree = rpart(MEDV ~ LAT + LON, data=boston)#
+prp(latlontree)
+prp(CARTmodel2)
+prp(CARTmodel2)
+summary(gerber)
+prp(CARTmodel2)
+summary(gerber)
+CARTmodel3 = rpart(voting ~ civicduty + hawthorne + self + neighbors + sex, data=gerber, cp=0.0)#
+prp(CARTmodel3)
+CARTmodel3 = rpart(voting ~ civicduty + hawthorne + self + neighbors + sex + control, data=gerber, cp=0.0)
+CARTmodel3 = rpart(voting ~ civicduty + hawthorne + self + neighbors + sex, data=gerber, cp=0.0)#
+prp(CARTmodel3)
+prp(CARTmodel3)
+CARTmodel3 = rpart(voting ~ civicduty + hawthorne + self + neighbors + sex + control, data=gerber, cp=0.0)
+prp(CARTmodel3)
+CARTmodel3 = rpart(voting ~ civicduty + hawthorne + self + neighbors + sex, data=gerber, cp=0.0)
+prp(CARTmodel3)
+CARTmodelC= rpart(voting ~ control, data=gerber, cp=0.0)
+prp(CARTmodelC)
+summary(CARTmodelC)
+letters = read.csv("letters.csv")
+letters = read.csv("letters_APBR.csv")
+letters = read.csv("letters_ABPR.csv")
+letters$isB = as.factor(letters$letter == "B")
+summary(letters)
+set.seed(1000)#
+split = sample.split(letters, SplitRatio = 0.5)#
+train = subset(letters, split==TRUE)#
+test = subset(letters, split==FALSE)
+summary(test)
+1169/(1169+389)
+CARTb = rpart(isB ~ . - letter, data=train, method="class")#
+tree.pred = predict(CARTb, newdata=test)#
+table(tree.pred, CARTb)
+table(letters$isB,tree.pred)
